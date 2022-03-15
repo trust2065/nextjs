@@ -23,10 +23,13 @@ export default function Home({ allPostsData }: HomePageProps) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
+        <p>The adventure back to 2009, where all this has started.</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          <small>
+            As a developer, I found the best way to help building the next
+            generation of world is by providing my knowledge and passion into
+            web developing world.
+          </small>
         </p>
       </section>
       <section>
