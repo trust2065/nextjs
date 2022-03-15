@@ -3,9 +3,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "cypress open",
+    "cypress-headless": "cypress run"
   },
   "dependencies": {
+    "cypress": "^9.5.2",
     "date-fns": "^2.28.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
