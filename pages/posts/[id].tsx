@@ -4,7 +4,7 @@ import Head from "next/head";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 
-export default function Post({ postData }) {
+export default function Post({ postData }: Post) {
   return (
     <Layout>
       <Head>
@@ -38,4 +38,17 @@ export async function getStaticProps({ params }) {
       postData,
     },
   };
+}
+
+export interface Post {
+  postData: Post.Data;
+}
+
+export namespace Post {
+  export interface Data {
+    id: string;
+    title: string;
+    date: string;
+    contentHtml: string;
+  }
 }

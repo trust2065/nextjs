@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { Post } from "../pages/posts/[id]";
 
 const postsDirectory = path.join(process.cwd(), "/posts");
 
@@ -18,11 +19,11 @@ export function getSortedPostsData() {
 
     return {
       id,
-      ...matterResult.data,
+      ...matterResult.data as Post.Data,
     };
   });
 
-  return allPostsData.sort(({ data: a }, { data: b }) => {
+  return allPostsData.sort(({ date: a }, { date: b }) => {
     if (a < b) {
       return 1;
     } else if (a > b) {
@@ -44,7 +45,7 @@ export function getAllPostIds() {
   }));
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string): Promise<Post.Data> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf-8");
 
@@ -59,5 +60,5 @@ export async function getPostData(id) {
     id,
     contentHtml,
     ...matterResult.data,
-  };
+  }  as Post.Data;
 }
