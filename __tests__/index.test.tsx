@@ -1,29 +1,40 @@
 import { render, screen } from "@testing-library/react";
-import Home from "../pages/index";
-import React from "react";
+import { Home2 } from "../pages/index";
 
 describe("Home", () => {
   it("renders a heading", () => {
-    render(
-      <Home
-        allPostsData={[
-          {
-            id: "1",
-            title: "first post",
-            date: "2022-03-16",
-            contentHtml: "html",
-          },
-        ]}
-      />
-    );
+    render(<Home2 />);
 
     const heading = screen.getByRole("heading", {
-      name: /blog/i,
+      name: /welcome to next\.js!/i,
     });
 
     expect(heading).toBeInTheDocument();
   });
 });
+
+// describe("Home", () => {
+//   it("renders a heading", () => {
+//     render(
+//       <Home
+//         allPostsData={[
+//           {
+//             id: "1",
+//             title: "first post",
+//             date: "2022-03-16",
+//             contentHtml: "html",
+//           },
+//         ]}
+//       />
+//     );
+
+//     const heading = screen.getByRole("heading", {
+//       name: /blog/i,
+//     });
+
+//     expect(heading).toBeInTheDocument();
+//   });
+// });
 
 const sum = (a: number, b: number) => a + b;
 
