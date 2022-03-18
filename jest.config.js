@@ -14,12 +14,14 @@ const customJestConfig = {
     "^@/pages/(.*)$": "<rootDir>/pages/$1",
   },
   testEnvironment: "jest-environment-jsdom",
-  modulePathIgnorePatterns: ["<rootDir>/lib/"],
+  modulePathIgnorePatterns: ["<rootDir>/lib/", "./cypress"],
+  // modulePathIgnorePatterns: ["<rootDir>/lib/"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 module.exports = createJestConfig(customJestConfig);
 // module.exports = {
 //   ...createJestConfig(customJestConfig),
-//   modulePathIgnorePatterns: ["./cypress"],
+//   // modulePathIgnorePatterns: ["./cypress"],
+//   testPathIgnorePatterns: ["<rootDir>/cypress/"],
 // };
