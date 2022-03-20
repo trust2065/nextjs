@@ -9,12 +9,12 @@ import type { Post } from "./posts/[id]";
 import utilStyles from "../styles/utils.module.css";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
+  // const allPostsData = getSortedPostsData();
   // console.log(JSON.stringify(allPostsData2, null, 2));
 
-  // const allPostsData: Post.Data[] = [
-  //   { contentHtml: "test", id: "1", date: "2022-03-22", title: "test" },
-  // ];
+  const allPostsData: Post.Data[] = [
+    { contentHtml: "test", id: "1", date: "2022-03-22", title: "test" },
+  ];
   return {
     props: {
       allPostsData,
